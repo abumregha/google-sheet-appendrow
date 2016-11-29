@@ -1,0 +1,22 @@
+// new function in apps script
+function appenddata101() {
+pss the active spreadsheet
+var ss = SpreadsheetApp.getActiveSpreadsheet();
+ var sheet2 = ss.getSheets()[2];
+  var sheet1 = ss.getSheets()[1];
+  // pass the values to variables
+  var name = sheet1.getRange("C3").getValue();
+  var birth = sheet1.getRange("C4").getValue();
+  var job = sheet1.getRange("C5").getValue();
+  var salary = sheet1.getRange("C6").getValue();
+  var company = sheet1.getRange("C7").getValue();
+  var datee = sheet1.getRange("C8").getValue();
+  // pass the google username to a variable
+  var userr = Session.getActiveUser().getEmail();
+  Logger.log(userr);
+  
+// Appends a new row with 3 columns to the bottom of the
+ // spreadsheet containing the values in the array
+ sheet2.appendRow([name,birth,job,salary,company,datee,userr]);
+  
+}
